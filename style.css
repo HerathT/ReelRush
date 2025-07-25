@@ -1,0 +1,171 @@
+﻿/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #0d0d0d; /* Ultra matte black */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Intro Container */
+#intro {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Grain Overlay */
+.grain {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('assets/noise.svg');
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Logo Section */
+.logo-container {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Stroke Animation for Logo */
+.logo {
+  width: 140px;
+  height: 140px;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawStroke 1s ease-in-out 0s 3;
+}
+
+/* 3-pass stroke fill with pause */
+@keyframes drawStroke {
+  0%   { stroke-dashoffset: 500; }
+  40%  { stroke-dashoffset: 0; }
+  70%  { stroke-dashoffset: 0; }
+  80%  { stroke-dashoffset: 500; }
+  100% { stroke-dashoffset: 500; }
+}
+
+/* Site Title */
+.title {
+  color: orange;
+  margin-top: 20px;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Footer Text */
+.footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+
+
+@media (max-width: 768px) {
+  .header,
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-text,
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .menu-buttons,
+  .nav-right {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .menu-buttons button,
+  .nav-btn {
+    flex: 1 1 auto;
+    margin: 5px 5px 0 0;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .search-section {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  #search-input {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .latest-movies-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .latest-movie-card {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+
+  .popup-card {
+    width: 100%;
+    max-width: 95%;
+    padding: 20px 15px;
+  }
+
+  .popup-card img {
+    height: auto;
+  }
+
+  .popup-content {
+    flex-direction: column;
+  }
+
+  .popup-details {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .download-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  section {
+    padding: 20px 15px !important;
+  }
+}
