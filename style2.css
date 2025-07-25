@@ -362,3 +362,26 @@ body, html {
     padding: 20px 15px !important;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .movie-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .detail-view {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .detail-left,
+  .detail-right {
+    width: 100%;
+  }
+}
+
